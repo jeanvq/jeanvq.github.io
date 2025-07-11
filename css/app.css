@@ -49,20 +49,20 @@ body {
   font-size: 1.5em;
   background: #444;
   color: #fff;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
 }
 header {
   width: 100%;
   height: 600px;
   background: url('../assets/image/backgroundPic.png');
-  background-position-y: 30%;
+  background-position-y: 50%;
   background-position-x: 20%;
   text-align: center;
   padding-top: 200px;
   font-size: 2em;
   text-shadow: 3px 3px 13px #777;
-  border-bottom: 1px solid #4e4d4d;
+  border-bottom: 1px solid #61DAFB;
 }
 #about {
   width: 100%;
@@ -73,6 +73,7 @@ header {
   background-color: #868282;
   color: #000000;
   text-align: center;
+  
 }
 
 #tech-stack h2 {
@@ -105,7 +106,7 @@ header {
     float: left;
     background: linear-gradient(#0f0f0f, #555);
     font-size: 1.3em;
-    border-right: 1px solid #4e4d4d;
+    border-right: 1px solid #61DAFB;
   }
     #aboutLeft > p {
       margin: 20px 0;
@@ -113,7 +114,7 @@ header {
     #bioPic {
       width: 350px;
       border-radius: 50%;
-      border: 4px solid #222;
+      border: 4px solid #61DAFB;
       box-shadow: 3px 3px 7px #111;
       float: left;
       margin-right: 67px;
@@ -131,8 +132,9 @@ footer {
   width: 100%;
   height: 100px;
   text-align: center;
-  padding-top: 18px;
-  background: linear-gradient(to right, #5e5f6e, #677685); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-top: 30px;
+  background: linear-gradient(to right, #5e5f6e, #868282); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: .9em;
-  border-top: 1px solid #000;
+  border-top: 1px solid #61DAFB;
+
 }
