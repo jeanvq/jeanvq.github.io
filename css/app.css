@@ -129,7 +129,12 @@ header {
     text-align: center;
   }
 #contact {
-  position: relative;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(#0f0f0f, #555);
+  padding: 25px 50px;
+  text-align: center;
+  float:calc(50% - 25px);
 }
 
 footer {
