@@ -49,7 +49,7 @@ body {
   font-size: 1.2em;
   background: #444;
   color: #fff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 header {
@@ -61,7 +61,7 @@ header {
   text-align: center;
   padding-top: 200px;
   font-size: 2em;
-  text-shadow: 3px 3px 13px #777;
+  text-shadow: 3px 3px 13px #ffffff;
   border-bottom: 1px solid #61DAFB;
 }
 #about {
@@ -70,7 +70,7 @@ header {
 }
 #tech-stack {
   padding: 2rem;
-  background-color: #868282;
+  background-color: #444;
   color: #000000;
   text-align: center;
   
@@ -128,6 +128,10 @@ header {
     background: linear-gradient(#0f0f0f, #555);
     text-align: center;
   }
+#contact {
+  position: relative;
+}
+
 footer {
   width: 100%;
   height: 100px;
