@@ -74,6 +74,7 @@ header {
   color: #000000;
   text-align: center;
   
+  
 }
 
 #tech-stack h2 {
@@ -120,6 +121,62 @@ header {
       margin-right: 67px;
       margin-bottom: 50px;
     }
+
+    /* CONTENEDOR PADRE */
+#prototypes-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* CONTENEDORES INDIVIDUALES */
+#prototype-container {
+  height: 650px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* IFRAMES 100% DEL CONTENEDOR */
+#prototype-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+/* Contenedor principal que organiza en columnas */
+.prototypes-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Cada prototipo ocupa espacio completo de su celda */
+.prototype-container {
+  height: 700px; /* más altura para mejor visibilidad */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* Iframe ocupa todo el espacio de su contenedor */
+.prototype-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
   #aboutRight {
     width: 50%;
     height: 900px;
