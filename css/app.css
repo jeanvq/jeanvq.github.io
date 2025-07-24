@@ -152,11 +152,12 @@ header {
   display: block;
 }
 
-#prototype-thumbnail.featured {
-  width: 300px;
+.prototype-thumbnail.featured {
+  width: 500px;
   display: block;
+  overflow: hidden;
   border-radius: 10px;
-  
+
 
 }
 
@@ -187,5 +188,5 @@ header {
   color: #aaa;
   font-size: 1rem;
   padding-bottom: 0%;
-  float: calc(100% - 2rem);
+  
 }
