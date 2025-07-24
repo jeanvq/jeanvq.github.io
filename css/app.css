@@ -1,4 +1,5 @@
-* {
+*
+ {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -69,17 +70,18 @@ header {
   height: 900px;
 }
 #tech-stack {
-  padding: 2rem;
+  padding:50px 50px;
   background-color: #444;
   color: #000000;
   text-align: center;
-  
-  
+  border-bottom: 1px solid #61DAFB;
+  border-top: 1px solid #61DAFB;
 }
+
 
 #tech-stack h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   color: #f6f8f8;
 }
 
@@ -87,16 +89,16 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 10rem;
 }
 
 .badges img {
-  height: 30px;
-  transition: transform 0.2s ease;
+  height: 50px;
+  transition: transform 10s ease;
 }
 
 .badges img:hover {
-  transform: scale(1.1);
+  transform: scale(5.5);
 }
 
 #aboutLeft {
@@ -122,59 +124,43 @@ header {
       margin-bottom: 50px;
     }
 
-    /* CONTENEDOR PADRE */
-#prototypes-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
 
-/* CONTENEDORES INDIVIDUALES */
-#prototype-container {
-  height: 650px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* IFRAMES 100% DEL CONTENEDOR */
-#prototype-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-/* Contenedor principal que organiza en columnas */
 .prototypes-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  gap: 30px;
-  max-width: 1300px;
-  margin: 50px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.0rem;
+  justify-content: center;
+  padding: 2rem 2rem;
 }
 
-/* Cada prototipo ocupa espacio completo de su celda */
-.prototype-container {
-  height: 700px; /* más altura para mejor visibilidad */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.prototype-thumbnail {
+  display: block;
+  width: 200px;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #fff;
+  box-shadow: 0 0 15px rgba(102, 14, 14, 0.3);
+  transition:transform 0.3s ease; box-shadow: 0.3s ease;
 }
 
-/* Iframe ocupa todo el espacio de su contenedor */
-.prototype-container iframe {
+.prototype-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.prototype-thumbnail img {
   width: 100%;
   height: 100%;
-  border: none;
   display: block;
 }
+
+#prototype-thumbnail.featured {
+  width: 300px;
+  display: block;
+  border-radius: 10px;
+  
+
+}
+
+
 
 
   #aboutRight {
@@ -186,22 +172,20 @@ header {
     text-align: center;
   }
 #contact {
-  width: 100%;
-  height: 150px;
+  padding: 50px 50px;
   background: linear-gradient(#0f0f0f, #555);
-  padding: 25px 50px;
+  padding: 100px 50px;
   text-align: center;
+  border-bottom: 1px solid #61DAFB;
   
 }
 
 #footer {
-
-  width: 100%;
-  height: 100px;
+  background-color: #0e0e0e;
+  padding: 2rem;
   text-align: center;
-  padding-top: 30px;
-  background: linear-gradient(to right, #5e5f6e, #3f3d3d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-size: .9em;
-  border-top: 1px solid #61DAFB;
-
+  color: #aaa;
+  font-size: 1rem;
+  padding-bottom: 0%;
+  float: calc(100% - 2rem);
 }
