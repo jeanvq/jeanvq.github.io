@@ -129,6 +129,11 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  header {
+    height: 250px; /* Reduced height for smaller screens */
+    padding-top: 100px; /* Adjusted padding for smaller screens */
+    font-size: 1.5em; /* Smaller font size */
+    background-position: center; /* Center background image */
   #aboutLeft, #aboutRight {
     width: 100%;
     padding: 20px;
@@ -166,4 +171,4 @@ footer {
     font-size: 0.9rem;
   }
 }
-
+}
