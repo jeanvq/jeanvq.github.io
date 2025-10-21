@@ -12,14 +12,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Image Modal functionality
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, initializing modal...');
+  
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const closeBtn = document.querySelector('.close');
   const zoomableImages = document.querySelectorAll('.zoomable-image');
 
+  console.log('Modal elements found:', { modal, modalImage, closeBtn, zoomableImages: zoomableImages.length });
+
+  if (!modal || !modalImage || !closeBtn || zoomableImages.length === 0) {
+    console.error('Missing modal elements!');
+    return;
+  }
+
   // Abrir modal al hacer clic en imagen
   zoomableImages.forEach(img => {
     img.addEventListener('click', function() {
+      console.log('Image clicked!', this.src);
       modal.style.display = 'block';
       modalImage.src = this.src;
       modalImage.alt = this.alt;
@@ -29,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Cerrar modal al hacer clic en X
   closeBtn.addEventListener('click', function() {
+    console.log('Close button clicked');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto'; // Restaurar scroll del body
   });
@@ -36,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cerrar modal al hacer clic fuera de la imagen
   modal.addEventListener('click', function(e) {
     if (e.target === modal) {
+      console.log('Clicked outside image');
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
     }
@@ -44,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cerrar modal con tecla Escape
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal.style.display === 'block') {
+      console.log('Escape key pressed');
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
     }
