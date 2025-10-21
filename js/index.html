@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeancarlo Ricardo — Portfolio</title>
+  <meta name="description" content="Portfolio of Jeancarlo Ricardo: web projects, experience, and contact." />
+  <link rel="stylesheet" href="../css/app.css">
+  <script src="../js/zoom.js" defer></script>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header aria-label="Main navigation bar">
+    <div class="container nav">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> <a href="#top" class="active">jean.dev</a></div>
+      <nav class="links" aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge"><span class="spark" aria-hidden="true"></span> Open to work</span>
+          <h1>Jeancarlo Ricardo<br/>Web Developer & Designer</h1>
+          <p class="lead">I build modern, fast, and accessible websites using HTML, CSS, and JavaScript. Passionate about clean interfaces, subtle animations, and code that feels like good coffee.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="https://github.com/jeanvq" target="_blank" rel="noreferrer noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Sample code snippet">
+<pre><code>// skills.ts
+export const stack = [
+  'HTML', 'CSS', 'JavaScript', 'React', 'Swift', 'Figma/Adobe XD'
+];
+
+function build(portfolio) {
+  return portfolio.map(s => `${s} ✅`)
+}
+
+console.log(build(stack))</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <p class="sub">A short selection of recent work — clean code, polished UI, and performance focus.</p>
+
+        <div class="grid">
+          <!-- Project 1 -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/personal.png" alt="screenshot of AdobexD personal site" />
+            </div>
+            <div>
+              <h3>AdobexD — Personal Site</h3>
+              <div class="meta">Responsive landing · HTML/CSS/JS</div>
+              <p>A visual experience celebrating Colombian identity: warm typography, vibrant palette, and storytelling sections.</p>
+              <div class="tags">
+                <span class="tag">Responsive</span>
+                <span class="tag">A11y</span>
+                <span class="tag">SEO</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://xd.adobe.com/view/44902753-0a90-4204-b9c7-87a9151865b9-11c3/?fullscreen" target="_blank">Demo </a>
+                <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/work.png" alt="Mockup project" loading="lazy">
+            </div>
+            <div>
+              <h3>BloomCircuit — Logo + Landing</h3>
+              <div class="meta">UI Design · Illustrator + HTML/CSS</div>
+              <p>Eco-tech branding with a circuit leaf and minimal landing page. Focused on contrast and micro-interactions.</p>
+              <div class="tags">
+                <span class="tag">Branding</span>
+                <span class="tag">UI</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" id="demo-zoom" href="#">Demo</a>
+                <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <div class="thumb">
+              <img src="../assets/images/inout.png" alt="Java CLI app screenshot">
+            </div>
+            <div>
+              <h3>InOut App — CLI Tracker (Java)</h3>
+              <div class="meta">Utility · Java + GitHub</div>
+              <p>Console application to track income and expenses with categories and emojis. Clean logic flow emphasis.</p>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">CLI</span>
+                <span class="tag">Git</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="#">Demo</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/InOut_App" target="_blank">Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p class="sub">Web developer in training, passionate about intentional and accessible design.</p>
+        <div class="about">
+          <div>
+            <p>I work with <strong>HTML, CSS, JavaScript</strong> and I'm exploring <strong>React</strong> and <strong>Swift</strong>. I focus on accessibility, performance, and clean coding practices. Coming from a design background, I enjoy turning ideas into functional digital experiences.</p>
+            <p>I'm looking to collaborate on remote projects with creative teams and clear goals. If my style resonates with you, let's connect and build something great.</p>
+            <ul>
+              <li>✅ Semantic & accessible layout (A11y)</li>
+              <li>⚡ True responsive performance</li>
+              <li>🎯 Consistent design with component systems</li>
+            </ul>
+          </div>
+          <div class="avatar">
+            <img id="profilePic" src="../assets/images/profilePic.png" alt="profile picture">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="sub">Interested in working together? Reach out and I’ll reply as soon as possible.</p>
+        <div class="contact-box">
+          <div class="contact-actions">
+            <a class="btn primary" href="jeancarlo.vq@hotmail.com">Email Me</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/jeancarlo-ricardo-392b4a365" target="_blank">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Jeancarlo Ricardo — Web Developer</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
