@@ -502,3 +502,38 @@ footer {
     max-height: 95%;
   }
 }
+
+/* ---------- 🧰 TECH STACK ---------- */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.tech-badges img {
+  height: 28px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: brightness(0.95);
+}
+
+.tech-badges img:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+/* Responsive tech stack */
+@media (max-width: 640px) {
+  .tech-badges {
+    gap: 8px;
+    margin-top: 1.5rem;
+  }
+  
+  .tech-badges img {
+    height: 24px;
+  }
+}
