@@ -322,6 +322,7 @@ h1 {
   .grid.stacked--visible .card:nth-child(3) { transition-delay: 80ms; }
   .grid.stacked--visible .card:nth-child(4) { transition-delay: 120ms; }
   .grid.stacked--visible .card:nth-child(5) { transition-delay: 160ms; }
+  .grid.stacked--visible .card:nth-child(6) { transition-delay: 200ms; }
 }
 
 .thumb img:hover {
