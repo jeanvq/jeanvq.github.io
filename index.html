@@ -7,12 +7,25 @@
   <meta name="description" content="Portfolio of Jeancarlo Ricardo: web projects, experience, and contact." />
   
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9VP09Z5EB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID');
+    
+    gtag('config', 'G-Z9VP09Z5EB', {
+      page_title: 'Jeancarlo Ricardo Portfolio',
+      page_location: window.location.href,
+      send_page_view: true
+    });
+    
+    // Track important interactions
+    function trackEvent(action, category, label) {
+      gtag('event', action, {
+        event_category: category,
+        event_label: label
+      });
+    }
   </script>
   
   <link rel="stylesheet" href="css/app.css">
