@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeancarlo Ricardo — Portfolio</title>
   <meta name="description" content="Portfolio of Jeancarlo Ricardo: web projects, experience, and contact." />
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  
   <link rel="stylesheet" href="css/app.css">
   <script src="js/zoom.js" defer></script>
 </head>
@@ -18,6 +28,9 @@
         <a href="#about">About</a>
         <a href="#tech-stack">Tech Stack</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+          <span class="theme-icon"></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -275,13 +288,70 @@ console.log(build(stack))</code></pre>
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="sub">Interested in working together? Reach out and I’ll reply as soon as possible.</p>
-        <div class="contact-box">
-          <div class="contact-actions">
-            <a class="btn primary" href="mailto:jeancarlo.vq@hotmail.com">Email Me</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/jeancarlo-ricardo-392b4a365" target="_blank">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub</a>
+        <h2>Let's Connect</h2>
+        <p class="sub">Interested in working together? I'm always open to discussing new opportunities, collaborations, and creative projects.</p>
+        
+        <div class="contact-grid">
+          <!-- Primary Contact -->
+          <div class="contact-card primary-contact">
+            <div class="contact-icon">💼</div>
+            <h3>Business Inquiries</h3>
+            <p>Ready to start your next project? Let's discuss your ideas and bring them to life.</p>
+            <a class="btn primary" href="mailto:jeancarlo.vq@hotmail.com">Send Email</a>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="contact-card social-links">
+            <div class="contact-icon">🤝</div>
+            <h3>Let's Connect</h3>
+            <p>Follow my journey, see my latest work, and connect on professional networks.</p>
+            <div class="social-grid">
+              <a href="https://www.linkedin.com/in/jeancarlo-ricardo-392b4a365" target="_blank" class="social-link linkedin">
+                <span class="social-icon">💼</span>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/jeanvq" target="_blank" class="social-link github">
+                <span class="social-icon">👨‍💻</span>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:jeancarlo.vq@hotmail.com" class="social-link email">
+                <span class="social-icon">📧</span>
+                <span>Email</span>
+              </a>
+              <a href="https://wa.me/1234567890" target="_blank" class="social-link whatsapp">
+                <span class="social-icon">💬</span>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Quick Info -->
+          <div class="contact-card quick-info">
+            <div class="contact-icon">⚡</div>
+            <h3>Quick Response</h3>
+            <div class="response-info">
+              <div class="response-item">
+                <span class="response-icon">📧</span>
+                <div>
+                  <strong>Email Response</strong>
+                  <p>Usually within 24 hours</p>
+                </div>
+              </div>
+              <div class="response-item">
+                <span class="response-icon">🌍</span>
+                <div>
+                  <strong>Timezone</strong>
+                  <p>EST (GMT-5)</p>
+                </div>
+              </div>
+              <div class="response-item">
+                <span class="response-icon">💼</span>
+                <div>
+                  <strong>Availability</strong>
+                  <p>Open for freelance & full-time</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -432,6 +502,48 @@ console.log(build(stack))</code></pre>
           if (e.key === 'ArrowLeft') prevImage();
           if (e.key === 'ArrowRight') nextImage();
         }
+      });
+    });
+    
+    // Theme Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      
+      // Check for saved theme or default to dark
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      body.setAttribute('data-theme', savedTheme);
+      
+      // Toggle theme function
+      function toggleTheme() {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Analytics event (when you set up GA)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'theme_toggle', {
+            'theme': newTheme
+          });
+        }
+      }
+      
+      // Add click event listener
+      if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+      }
+      
+      // Analytics for contact interactions
+      document.querySelectorAll('.contact-card a, .social-link').forEach(link => {
+        link.addEventListener('click', function() {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_click', {
+              'contact_type': this.textContent.trim()
+            });
+          }
+        });
       });
     });
   </script>
