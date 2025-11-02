@@ -29,3 +29,52 @@ document.addEventListener('DOMContentLoaded', function() {
   updateStacked();
   window.addEventListener('resize', updateStacked);
 });
+
+// Mobile-specific optimizations
+document.addEventListener('DOMContentLoaded', function() {
+  // Detect if device supports touch
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (isTouchDevice) {
+    document.body.classList.add('touch-device');
+    
+    // Improve scroll performance on mobile
+    let ticking = false;
+    function updateScrollPosition() {
+      // Add subtle parallax or scroll effects if needed
+      ticking = false;
+    }
+    
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollPosition);
+        ticking = true;
+      }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Handle orientation changes
+    window.addEventListener('orientationchange', function() {
+      setTimeout(() => {
+        window.scrollTo(0, window.scrollY);
+      }, 500);
+    });
+  }
+  
+  // Smooth scroll for navigation links on mobile
+  const navLinks = document.querySelectorAll('.nav .links a[href^="#"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offsetTop = target.offsetTop - 80; // Account for fixed nav
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
