@@ -65,7 +65,7 @@ console.log(build(stack))</code></pre>
             <div>
               <h3>AdobexD — Personal Site</h3>
               <div class="meta">Responsive landing · HTML/CSS/JS</div>
-              <p>A visual experience celebrating Colombian identity: warm typography, vibrant palette, and storytelling sections.</p>
+              <p>A visual experience: warm typography, vibrant palette, and storytelling sections.</p>
               <div class="tags">
                 <span class="tag">Responsive</span>
                 <span class="tag">A11y</span>
@@ -81,7 +81,7 @@ console.log(build(stack))</code></pre>
           <!-- Project 2 -->
           <article class="card">
             <div class="thumb">
-              <img src="assets/images/work.png" alt="Mockup project" loading="lazy" class="zoomable-image" style="cursor: pointer;">
+              <img id="project2-image" src="assets/images/work.png" alt="Mockup project" loading="lazy" class="zoomable-image" style="cursor: pointer;">
             </div>
             <div>
               <h3>BloomCircuit — Logo + Landing</h3>
@@ -93,7 +93,7 @@ console.log(build(stack))</code></pre>
                 <span class="tag">CSS Grid</span>
               </div>
               <div class="actions">
-                <a class="btn ghost" id="demo-zoom" href="#">Demo</a>
+                <a class="btn ghost" id="demo-zoom" href="#" onclick="openImageModal('project2-image'); return false;">Demo</a>
                 <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub</a>
               </div>
             </div>
@@ -295,6 +295,19 @@ console.log(build(stack))</code></pre>
         }
       }
     });
+    
+    // Function to open modal from button click
+    function openImageModal(imageId) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const targetImage = document.getElementById(imageId);
+      
+      if (modal && modalImg && targetImage) {
+        modal.style.display = 'block';
+        modalImg.src = targetImage.src;
+        modalImg.alt = targetImage.alt;
+      }
+    }
   </script>
 </body>
 </html>
