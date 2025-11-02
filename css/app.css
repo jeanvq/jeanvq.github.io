@@ -323,6 +323,7 @@ h1 {
   .grid.stacked--visible .card:nth-child(4) { transition-delay: 120ms; }
   .grid.stacked--visible .card:nth-child(5) { transition-delay: 160ms; }
   .grid.stacked--visible .card:nth-child(6) { transition-delay: 200ms; }
+  .grid.stacked--visible .card:nth-child(7) { transition-delay: 240ms; }
 }
 
 .thumb img:hover {
@@ -490,6 +491,61 @@ footer {
   to { opacity: 1; }
 }
 
+/* Modal navigation */
+.modal-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1002;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-prev {
+  left: 20px;
+}
+
+.modal-next {
+  right: 20px;
+}
+
+.modal-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.modal-nav:disabled:hover {
+  transform: translateY(-50%) scale(1);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-counter {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 /* Responsive modal */
 @media (max-width: 768px) {
   .close {
@@ -501,6 +557,19 @@ footer {
   .modal-content {
     max-width: 95%;
     max-height: 95%;
+  }
+  
+  .modal-nav {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  
+  .modal-prev {
+    left: 10px;
+  }
+  
+  .modal-next {
+    right: 10px;
   }
 }
 

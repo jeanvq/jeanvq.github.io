@@ -182,6 +182,30 @@ console.log(build(stack))</code></pre>
               </div>
             </div>
           </article>
+
+          <!-- Project 7 - Gallery Example -->
+          <article class="card">
+            <div class="thumb">
+              <img id="gallery-main" src="assets/images/personal.png" alt="Multi-project gallery main image" loading="lazy" class="zoomable-image" style="cursor: pointer;">
+              <!-- Hidden images for gallery -->
+              <img id="gallery-img2" src="assets/images/work.png" alt="Gallery image 2" style="display: none;">
+              <img id="gallery-img3" src="assets/images/inout.png" alt="Gallery image 3" style="display: none;">
+            </div>
+            <div>
+              <h3>Portfolio Gallery — Multiple Views</h3>
+              <div class="meta">Multi-Image · Gallery Navigation</div>
+              <p>Example project with multiple screenshots and designs. Navigate between different views and components of the project.</p>
+              <div class="tags">
+                <span class="tag">Gallery</span>
+                <span class="tag">Multi-view</span>
+                <span class="tag">Navigation</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="#" onclick="openImageGallery(['gallery-main', 'gallery-img2', 'gallery-img3']); return false;">Ver Galería</a>
+                <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -251,7 +275,12 @@ console.log(build(stack))</code></pre>
   <div id="imageModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <img id="modalImage" src="" alt="">
+      <div class="modal-image-container">
+        <button class="modal-nav modal-prev" id="modalPrev">&lt;</button>
+        <img id="modalImage" src="" alt="">
+        <button class="modal-nav modal-next" id="modalNext">&gt;</button>
+      </div>
+      <div class="modal-counter" id="modalCounter"></div>
     </div>
   </div>
 
@@ -296,18 +325,94 @@ console.log(build(stack))</code></pre>
       }
     });
     
-    // Function to open modal from button click
+    // Gallery variables
+    let currentGallery = [];
+    let currentImageIndex = 0;
+    
+    // Function to open modal from button click (single image)
     function openImageModal(imageId) {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
       const targetImage = document.getElementById(imageId);
-      
-      if (modal && modalImg && targetImage) {
-        modal.style.display = 'block';
-        modalImg.src = targetImage.src;
-        modalImg.alt = targetImage.alt;
+      if (targetImage) {
+        currentGallery = [targetImage];
+        currentImageIndex = 0;
+        showModalImage();
       }
     }
+    
+    // Function to open modal with gallery (multiple images)
+    function openImageGallery(imageIds) {
+      const images = imageIds.map(id => document.getElementById(id)).filter(img => img);
+      if (images.length > 0) {
+        currentGallery = images;
+        currentImageIndex = 0;
+        showModalImage();
+      }
+    }
+    
+    // Function to show current image in modal
+    function showModalImage() {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const counter = document.getElementById('modalCounter');
+      const prevBtn = document.getElementById('modalPrev');
+      const nextBtn = document.getElementById('modalNext');
+      
+      if (currentGallery.length > 0) {
+        const currentImage = currentGallery[currentImageIndex];
+        modal.style.display = 'block';
+        modalImg.src = currentImage.src;
+        modalImg.alt = currentImage.alt;
+        
+        // Update counter
+        if (currentGallery.length > 1) {
+          counter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
+          counter.style.display = 'block';
+          prevBtn.style.display = 'block';
+          nextBtn.style.display = 'block';
+          
+          // Enable/disable navigation buttons
+          prevBtn.disabled = currentImageIndex === 0;
+          nextBtn.disabled = currentImageIndex === currentGallery.length - 1;
+        } else {
+          counter.style.display = 'none';
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+        }
+      }
+    }
+    
+    // Navigation functions
+    function nextImage() {
+      if (currentImageIndex < currentGallery.length - 1) {
+        currentImageIndex++;
+        showModalImage();
+      }
+    }
+    
+    function prevImage() {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        showModalImage();
+      }
+    }
+    
+    // Add navigation event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      const prevBtn = document.getElementById('modalPrev');
+      const nextBtn = document.getElementById('modalNext');
+      
+      if (prevBtn) prevBtn.onclick = prevImage;
+      if (nextBtn) nextBtn.onclick = nextImage;
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('imageModal');
+        if (modal.style.display === 'block') {
+          if (e.key === 'ArrowLeft') prevImage();
+          if (e.key === 'ArrowRight') nextImage();
+        }
+      });
+    });
   </script>
 </body>
 </html>
