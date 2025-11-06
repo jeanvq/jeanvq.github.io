@@ -961,7 +961,7 @@ footer {
   --bg: #ffffff;
   --surface: #f8f9fa;
   --text: #2c3e50;
-  --muted: #6c757d;
+  --muted: #495057;
   --card: #f8f9fa;
   --border: #dee2e6;
   --brand: #e65100;
@@ -988,6 +988,20 @@ footer {
 
 [data-theme="light"] .theme-icon::after {
   content: '🌙';
+}
+
+/* Enhanced navbar contrast in light mode */
+[data-theme="light"] .nav a {
+  color: #495057;
+}
+
+[data-theme="light"] .nav a.active,
+[data-theme="light"] .nav a:hover {
+  color: #2c3e50;
+}
+
+[data-theme="light"] .brand {
+  color: #2c3e50;
 }
 
 [data-theme="dark"] .theme-icon::after {
