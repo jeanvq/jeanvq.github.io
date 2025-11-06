@@ -240,7 +240,80 @@ h1 {
   margin-bottom: 22px;
 }
 
-/* ---------- 6️⃣ PROJECTS GRID ---------- */
+/* ---------- 6️⃣ ABOUT SECTION ---------- */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-text .lead {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.highlight-item {
+  background: rgba(var(--accent-rgb), 0.05);
+  border: 1px solid rgba(var(--accent-rgb), 0.15);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: rgba(var(--accent-rgb), 0.08);
+  border-color: rgba(var(--accent-rgb), 0.25);
+  transform: translateY(-2px);
+}
+
+.highlight-item h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.highlight-item p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.about-cta {
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.1), rgba(var(--accent-rgb), 0.05));
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.about-cta p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ---------- 7️⃣ PROJECTS GRID ---------- */
 .grid {
   display: grid;
   gap: 18px;
@@ -409,6 +482,21 @@ h1 {
     overflow-x: auto;
   }
   
+  /* About section mobile */
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  
+  .highlight-item {
+    padding: 16px;
+  }
+  
+  .about-text .lead {
+    font-size: 17px;
+  }
+
   /* Cards mobile */
   .card {
     grid-template-columns: 1fr;
