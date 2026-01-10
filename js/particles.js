@@ -5,9 +5,58 @@ class ParticleBackground {
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
     this.particleCount = 100; // Número de partículas
-    this.colors = ['#00ffff', '#ff00ff', '#00ff00', '#ffff00']; // Colores neón
+    this.theme = 'dark';
+    this.connectionAlpha = 0.2;
+    this.alphaRange = { min: 0.2, max: 0.7 };
+    this.colors = ['#00ffff', '#ff00ff', '#00ff00', '#ffff00']; // Colores neón (se ajustan por tema)
     
     this.init();
+  }
+
+  setPalette(theme) {
+    const nextTheme = theme === 'light' ? 'light' : 'dark';
+    this.theme = nextTheme;
+
+    if (nextTheme === 'light') {
+      // Colores y transparencias más suaves para evitar ruido sobre fondo blanco
+      this.colors = ['#1f2937', '#334155', '#475569', '#64748b'];
+      this.connectionAlpha = 0.12;
+      this.alphaRange = { min: 0.12, max: 0.35 };
+    } else {
+      this.colors = ['#00ffff', '#ff00ff', '#00ff00', '#ffff00'];
+      this.connectionAlpha = 0.2;
+      this.alphaRange = { min: 0.2, max: 0.7 };
+    }
+  }
+
+  syncTheme() {
+    const applyTheme = () => {
+      const themeAttr = document.body.getAttribute('data-theme');
+      const savedTheme = localStorage.getItem('theme');
+      this.setPalette(themeAttr || savedTheme || 'dark');
+
+      // Recolorear partículas existentes para que coincidan con la nueva paleta
+      this.particles.forEach(particle => {
+        particle.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+        particle.alpha = Math.max(this.alphaRange.min, Math.min(this.alphaRange.max, particle.alpha));
+      });
+    };
+
+    applyTheme();
+
+    // Escucha cambios en data-theme para reaccionar al toggle claro/oscuro
+    this.themeObserver = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+          applyTheme();
+        }
+      });
+    });
+
+    this.themeObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
   }
 
   init() {
@@ -23,6 +72,7 @@ class ParticleBackground {
     document.body.prepend(this.canvas);
     
     this.resize();
+    this.syncTheme();
     this.createParticles();
     this.animate();
     
@@ -45,7 +95,7 @@ class ParticleBackground {
         vy: (Math.random() - 0.5) * 0.5, // Velocidad Y
         radius: Math.random() * 2 + 1,
         color: this.colors[Math.floor(Math.random() * this.colors.length)],
-        alpha: Math.random() * 0.5 + 0.2 // Transparencia
+        alpha: Math.random() * (this.alphaRange.max - this.alphaRange.min) + this.alphaRange.min // Transparencia
       });
     }
   }
@@ -69,7 +119,7 @@ class ParticleBackground {
 
       // Efecto de pulsación (brillo)
       particle.alpha += (Math.random() - 0.5) * 0.02;
-      particle.alpha = Math.max(0.1, Math.min(0.7, particle.alpha));
+      particle.alpha = Math.max(this.alphaRange.min, Math.min(this.alphaRange.max, particle.alpha));
 
       // Rebote en los bordes
       if (particle.x < 0 || particle.x > this.canvas.width) {
@@ -93,7 +143,7 @@ class ParticleBackground {
         if (distance < maxDistance) {
           this.ctx.beginPath();
           this.ctx.strokeStyle = this.particles[i].color;
-          this.ctx.globalAlpha = (1 - distance / maxDistance) * 0.2;
+          this.ctx.globalAlpha = (1 - distance / maxDistance) * this.connectionAlpha;
           this.ctx.lineWidth = 0.5;
           this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
           this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
