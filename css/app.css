@@ -445,19 +445,21 @@ h1 {
   /* Navigation for mobile */
   .nav {
     height: auto;
-    min-height: 56px;
-    padding: 12px 16px;
+    min-height: 64px;
+    padding: 14px 16px;
+    align-items: center;
   }
   
   .nav .links {
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: flex-end;
+    align-items: center;
   }
   
   .nav .links a {
     font-size: 13px;
-    padding: 4px 6px;
+    padding: 6px 8px;
   }
   
   /* Hide less important links on mobile */
@@ -474,8 +476,11 @@ h1 {
   
   /* Make theme toggle smaller */
   .theme-toggle {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    font-size: 18px;
+    margin-left: 8px;
   }
   
   .brand {
@@ -621,13 +626,14 @@ h1 {
   }
   
   .nav {
-    height: 52px;
-    padding: 0 12px;
+    height: auto;
+    min-height: 60px;
+    padding: 12px;
   }
   
   .nav .links a {
-    font-size: 13px;
-    padding: 4px 6px;
+    font-size: 12px;
+    padding: 5px 7px;
   }
   
   .hero h1 {
@@ -986,13 +992,14 @@ footer {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
   border-radius: 50%;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 20px;
+  margin-left: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
