@@ -1,4 +1,4 @@
-// Stellar particle background effect
+// Code symbols particle background effect
 class ParticleBackground {
   constructor() {
     this.canvas = document.createElement('canvas');
@@ -9,6 +9,17 @@ class ParticleBackground {
     this.connectionAlpha = 0.2;
     this.alphaRange = { min: 0.2, max: 0.7 };
     this.colors = ['#00ffff', '#ff00ff', '#00ff00', '#ffff00']; // Colores neón (se ajustan por tema)
+    
+    // Símbolos de código de diferentes lenguajes
+    this.codeSymbols = [
+      '{}', '<>', '()', '[]', '</>',
+      'fn', 'def', 'var', 'let', 'const',
+      '=>', '==', '!=', '&&', '||',
+      'if', 'for', 'try', '$', '@',
+      '#', '*', '+', '-', '/',
+      'int', 'str', 'bool', 'void',
+      'λ', '∴', '∀', '∃'
+    ];
     
     this.init();
   }
@@ -93,21 +104,36 @@ class ParticleBackground {
         y: Math.random() * this.canvas.height,
         vx: (Math.random() - 0.5) * 0.5, // Velocidad X
         vy: (Math.random() - 0.5) * 0.5, // Velocidad Y
-        radius: Math.random() * 2 + 1,
+        size: Math.random() * 8 + 6, // Tamaño del texto (6-14px)
+        symbol: this.codeSymbols[Math.floor(Math.random() * this.codeSymbols.length)],
         color: this.colors[Math.floor(Math.random() * this.colors.length)],
-        alpha: Math.random() * (this.alphaRange.max - this.alphaRange.min) + this.alphaRange.min // Transparencia
+        alpha: Math.random() * (this.alphaRange.max - this.alphaRange.min) + this.alphaRange.min, // Transparencia
+        rotation: Math.random() * Math.PI * 2, // Rotación inicial
+        rotationSpeed: (Math.random() - 0.5) * 0.01 // Velocidad de rotación
       });
     }
   }
 
   drawParticles() {
     this.particles.forEach(particle => {
-      this.ctx.beginPath();
-      this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      this.ctx.save();
+      
+      // Mover al centro de la partícula
+      this.ctx.translate(particle.x, particle.y);
+      this.ctx.rotate(particle.rotation);
+      
+      // Configurar estilo de texto
+      this.ctx.font = `${particle.size}px monospace`;
       this.ctx.fillStyle = particle.color;
       this.ctx.globalAlpha = particle.alpha;
-      this.ctx.fill();
+      this.ctx.textAlign = 'center';
+      this.ctx.textBaseline = 'middle';
+      
+      // Dibujar símbolo
+      this.ctx.fillText(particle.symbol, 0, 0);
+      
       this.ctx.globalAlpha = 1;
+      this.ctx.restore();
     });
   }
 
@@ -116,6 +142,9 @@ class ParticleBackground {
       // Mover partícula
       particle.x += particle.vx;
       particle.y += particle.vy;
+
+      // Rotación suave
+      particle.rotation += particle.rotationSpeed;
 
       // Efecto de pulsación (brillo)
       particle.alpha += (Math.random() - 0.5) * 0.02;
