@@ -1,3 +1,7 @@
+[data-theme="light"] .card {
+  border: 2px solid #b0b4bb;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
 /* Zoom effect for project image */
 .thumb img.zoomed {
   transform: scale(1.3);
