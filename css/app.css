@@ -406,6 +406,19 @@ h1 {
   border-radius: 10px;
 }
 
+/* Keep portrait screenshots from looking oversized in the shared project grid */
+.holyverse-thumb {
+  background: linear-gradient(180deg, #14161b, #0e0f13);
+  border: 1px solid #2b2f39;
+}
+
+.holyverse-thumb #holy-verse {
+  object-fit: contain;
+  padding: 8px 22px;
+  background: #0b0c10;
+  border-radius: 10px;
+}
+
 .project4-thumb {
   background: radial-gradient(circle at 15% 20%, rgba(255, 106, 0, 0.18), transparent 45%),
               radial-gradient(circle at 85% 85%, rgba(0, 212, 255, 0.18), transparent 45%),
@@ -664,6 +677,10 @@ h1 {
   margin-top: 10px;
   display: flex;
   gap: 10px;
+}
+
+.holyverse-actions {
+  flex-wrap: wrap;
 }
 
 /* Enhanced mobile styles */
