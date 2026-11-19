@@ -1368,3 +1368,138 @@ footer {
 .back-link:hover {
   color: var(--brand);
 }
+
+/* =======================================================
+   🎨 DESIGN PASS — November 2026
+   These rules come last on purpose so they override older
+   styles above without having to touch them.
+   ======================================================= */
+
+/* ---------- Project cards: same layout everywhere ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card > div:nth-child(2) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 0;
+}
+
+/* Push the buttons to the bottom so every card lines up */
+.card .actions {
+  margin-top: auto;
+  padding-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Phone screenshots: fill the thumbnail ---------- */
+.holyverse-thumb #holy-verse,
+#project4-image,
+#futhub-main {
+  object-fit: cover;
+  object-position: top center;
+  padding: 0;
+  background: transparent;
+}
+
+/* ---------- Experience: text + photo side by side ---------- */
+.about {
+  padding: 28px;
+  align-items: start;
+}
+
+@media (min-width: 860px) {
+  .about {
+    grid-template-columns: 1fr 240px;
+    gap: 40px;
+  }
+}
+
+.about h3 {
+  font-size: 18px;
+  margin: 20px 0 4px;
+}
+
+.about h3:first-child {
+  margin-top: 0;
+}
+
+.about .sub {
+  margin-bottom: 10px;
+}
+
+.about ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.about li {
+  margin-bottom: 6px;
+}
+
+.about .avatar {
+  justify-self: center;
+  max-width: 240px;
+}
+
+/* ---------- About Me: same left edge as other sections ---------- */
+#about .container > h2 {
+  max-width: none;
+  margin: 0 0 10px;
+}
+
+.about-content {
+  max-width: none;
+  margin: 0;
+}
+
+.about-text > p {
+  max-width: 75ch;
+}
+
+/* ---------- Mobile menu: show every link ---------- */
+/* Row 1: brand + Resume + theme toggle. Row 2: section links. */
+@media (max-width: 640px) {
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  .nav .links {
+    display: contents;
+  }
+
+  .nav .brand {
+    order: 0;
+    margin-right: auto;
+  }
+
+  .nav .resume-link {
+    order: 1;
+  }
+
+  .nav .theme-toggle {
+    order: 2;
+    margin-left: 10px;
+  }
+
+  /* Forces the section links onto their own line */
+  .nav::after {
+    content: "";
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .nav .links a:not(.resume-link) {
+    order: 4;
+    display: inline-block;
+    font-size: 13px;
+    padding: 6px 2px;
+    white-space: nowrap;
+  }
+}
