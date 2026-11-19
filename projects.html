@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=5" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>All Projects — Jeancarlo Ricardo</title>
+  <meta name="description" content="All web and mobile projects by Jeancarlo Ricardo." />
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9VP09Z5EB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-Z9VP09Z5EB', {
+      page_title: 'Jeancarlo Ricardo Portfolio',
+      page_location: window.location.href,
+      send_page_view: true
+    });
+    
+    // Track important interactions
+    function trackEvent(action, category, label) {
+      gtag('event', action, {
+        event_category: category,
+        event_label: label
+      });
+    }
+  </script>
+  
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/particles.js" defer></script>
+  <script src="js/zoom.js" defer></script>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header aria-label="Main navigation bar">
+    <div class="container nav">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> <a href="index.html">jeancarlodev</a></div>
+      <nav class="links" aria-label="Sections">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#tech-stack">Tech Stack</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="assets/images/RESUMEPDF.pdf" target="_blank" rel="noopener noreferrer" class="resume-link">Resume</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+          <span class="theme-icon"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <main id="top">
+    <section id="all-projects" class="section">
+      <div class="container">
+        <a class="back-link" href="index.html#projects">← Back to home</a>
+        <h2>All Projects</h2>
+        <p class="sub">Everything I've built so far — from my latest full-stack and iOS apps to my first design prototypes.</p>
+
+        <div class="grid">
+          <!-- Project 10 - HolyVerse -->
+<article class="card">
+<div class="thumb holyverse-thumb">
+          <img id="holy-verse" src="assets/images/ios1.png" alt="HolyVerse iOS app screenshot 1" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageGallery(['holy-verse','holy-verse-2','holy-verse-3','holy-verse-4'])">
+</div>
+<div>
+<h3>HolyVerse — Bible Study App</h3>
+<div class="meta">iOS App & Web · HTML/CSS/JS + Swift/Capacitor + Firebase</div>
+<p>Bilingual (English/Spanish) Bible study app, live on the App Store. Read Scripture in multiple translations, study with Strong's Concordance, explore biblical characters and maps, get a daily devotional, and ask questions to an AI-powered Bible Bot.</p>
+<div class="tags">
+<span class="tag">iOS App</span>
+<span class="tag">Swift</span>
+<span class="tag">Bible Bot AI</span>
+</div>
+<div class="actions holyverse-actions">
+<a class="btn ghost" href="#" onclick="openImageGallery(['holy-verse','holy-verse-2','holy-verse-3','holy-verse-4']); return false;">Gallery</a>
+<a class="btn ghost" href="https://apps.apple.com/ca/app/holy-verse/id6800918404" target="_blank" rel="noopener noreferrer">App Store</a>
+<a class="btn ghost" href="https://jeancarlodev.com/holy_verse/" target="_blank" rel="noopener noreferrer">Go to website</a>
+<a class="btn ghost" href="https://github.com/jeanvq/holy_verse" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+</div>
+
+<div style="display: none;" aria-hidden="true">
+<img id="holy-verse-2" src="assets/images/ios2.png" alt="HolyVerse iOS app screenshot 2" loading="lazy" />
+<img id="holy-verse-3" src="assets/images/ios3.png" alt="HolyVerse iOS app screenshot 3" loading="lazy" />
+<img id="holy-verse-4" src="assets/images/ios4.png" alt="HolyVerse iOS app screenshot 4" loading="lazy" />
+</div>
+</div>
+</article>
+
+          <!-- Project 13 - AutoPulse Capstone -->
+          <article class="card">
+            <div class="thumb">
+              <img id="autopulse-main" src="assets/images/AUAPP.png" alt="AutoPulse vehicle maintenance dashboard preview" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageGallery(['autopulse-main','autopulse-cover','autopulse-2','autopulse-3','autopulse-4','autopulse-5','autopulse-6'])" />
+            </div>
+            <div>
+              <h3>AutoPulse — Capstone Project</h3>
+              <div class="meta">Web App · Vehicle Maintenance & Wear Tracker</div>
+              <p>AutoPulse is my capstone Full stack application for tracking vehicle maintenance schedules and wear indicators, featuring AI dashboard scanner, VIN lookup and smart weathers alert</p>
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Railway</span>
+                <span class="tag">Chart.js</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://autopulse-production-09cc.up.railway.app/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/AutoPulse" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              </div>
+
+              <!-- Hidden gallery images for AutoPulse modal navigation -->
+              <div style="display: none;" aria-hidden="true">
+                <img id="autopulse-cover" src="assets/images/AUAPP.png" alt="AutoPulse brand cover" loading="lazy" />
+                <img id="autopulse-2" src="assets/images/auto2.png" alt="AutoPulse vehicle tracker screen 2" loading="lazy" />
+                <img id="autopulse-3" src="assets/images/auto3.png" alt="AutoPulse vehicle tracker screen 3" loading="lazy" />
+                <img id="autopulse-4" src="assets/images/auto4.png" alt="AutoPulse vehicle tracker screen 4" loading="lazy" />
+                <img id="autopulse-5" src="assets/images/auto5.png" alt="AutoPulse vehicle tracker screen 5" loading="lazy" />
+                <img id="autopulse-6" src="assets/images/auto6.png" alt="AutoPulse vehicle tracker screen 6" loading="lazy" />
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 14 - AutoPulse iOS Native App -->
+          <article class="card">
+            <div class="thumb">
+              <img id="autopulse-ios-main" src="assets/images/simulator1.png" alt="AutoPulse iOS app dashboard" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageGallery(['autopulse-ios-main','autopulse-ios-2','autopulse-ios-3','autopulse-ios-4','autopulse-ios-5','autopulse-ios-6','autopulse-ios-7','autopulse-ios-8','autopulse-ios-9'])" />
+            </div>
+            <div>
+              <h3>AutoPulse iOS — Native Vehicle Health Manager</h3>
+              <div class="meta">SwiftUI · Firebase · Claude AI · Swift Charts · App Store</div>
+              <p>A native iOS vehicle health management app built with SwiftUI. Features an animated health score dashboard, AI-powered warning light scanner, real-time weather alerts, fuel tracking, and maintenance logs. Available in English and Spanish.</p>
+              <div class="tags">
+                <span class="tag">Swift</span>
+                <span class="tag">SwiftUI</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Claude AI</span>
+                <span class="tag">Swift Charts</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="#" onclick="openImageGallery(['autopulse-ios-main','autopulse-ios-2','autopulse-ios-3','autopulse-ios-4','autopulse-ios-5','autopulse-ios-6','autopulse-ios-7','autopulse-ios-8','autopulse-ios-9']); return false;">Gallery</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/AutoPulse-iOS" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              </div>
+              <div style="display: none;" aria-hidden="true">
+                <img id="autopulse-ios-2" src="assets/images/simulator2.png" alt="AutoPulse iOS screen 2" loading="lazy" />
+                <img id="autopulse-ios-3" src="assets/images/simulator3.png" alt="AutoPulse iOS screen 3" loading="lazy" />
+                <img id="autopulse-ios-4" src="assets/images/simulator4.png" alt="AutoPulse iOS screen 4" loading="lazy" />
+                <img id="autopulse-ios-5" src="assets/images/simulator5.png" alt="AutoPulse iOS screen 5" loading="lazy" />
+                <img id="autopulse-ios-6" src="assets/images/simulator6.png" alt="AutoPulse iOS screen 6" loading="lazy" />
+                <img id="autopulse-ios-7" src="assets/images/simulator7.png" alt="AutoPulse iOS screen 7" loading="lazy" />
+                <img id="autopulse-ios-8" src="assets/images/simulator8.png" alt="AutoPulse iOS screen 8" loading="lazy" />
+                <img id="autopulse-ios-9" src="assets/images/simulator9.png" alt="AutoPulse iOS screen 9" loading="lazy" />
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 11 - Global Explorer -->
+          <article class="card">
+            <div class="thumb">
+              <img id="global-explorer" src="assets/images/global3.png" alt="Global Explorer Angular app screenshot" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageModal('global-explorer')" />
+            </div>
+            <div>
+              <h3>Global Explorer</h3>
+              <div class="meta">Web App · Angular + REST Countries API</div>
+              <p>An Angular web application that allows users to search for detailed information about any country in the world using the REST Countries API.</p>
+              <div class="tags">
+                <span class="tag">Angular</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Search</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://573174f5.global-explorer.pages.dev/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/Global-Explorer" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7 - Arc Browser Extension -->
+          <article class="card">
+            <div class="thumb">
+              <img id="arc-main" src="assets/images/ArcByte.png" alt="ArcByte project main interface" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageModal('arc-main')">
+            </div>
+            <div>
+              <h3>ArcByte — Fictional Tech Company</h3>
+              <div class="meta">Web Development · React + Modern Stack</div>
+              <p>Complete corporate website for ArcByte, a fictional technology company specializing in innovative software solutions. Features modern design, responsive layout, and interactive elements.</p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Corporate</span>
+                <span class="tag">Modern UI</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://jeancarlodev.com/arcbyte/" target="_blank">Live Demo</a>
+                <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 9 - Origin & Ember -->
+          <article class="card">
+            <div class="thumb">
+              <img id="origin-ember" src="assets/images/Origin.png" alt="Origin & Ember - Restaurant website" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageModal('origin-ember')" />
+            </div>
+            <div>
+              <h3>Origin & Ember — Restaurant Experience</h3>
+              <div class="meta">Web Design · HTML/CSS</div>
+              <p>Elegant restaurant website featuring modern design, menu showcase, and seamless navigation. Built with clean HTML/CSS architecture and responsive layout.</p>
+              <div class="tags">
+                <span class="tag">Restaurant</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://jeanvq.github.io/Origin-Ember/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/Origin-Ember" target="_blank">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 ORIGIN & EMBER IOS APP -->
+          <article class="card">
+            <div class="thumb">
+              <img id="project2-image" src="assets/images/image1.png" alt="Origin & Ember app" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageGallery(['project2-image','project2-image2','project2-image3','project2-image4','project2-image5'])">
+            </div>
+            <div>
+              <h3>Origin & Ember IOS App</h3>
+              <div class="meta">iOS App · Swift</div>
+              <p>An iOS application developed using Swift, focusing on seamless user experience and intuitive design.</p>
+              <div class="tags">
+                <span class="tag">iOS</span>
+                <span class="tag">UI</span>
+                <span class="tag">Swift</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="#" onclick="openImageGallery(['project2-image','project2-image2','project2-image3','project2-image4','project2-image5']); return false;">Gallery</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/Origin-EmberIOS" target="_blank">GitHub Repo</a>
+              </div>
+              <div style="display: none;" aria-hidden="true">
+                <img id="project2-image2" src="assets/images/image2.png" alt="Origin & Ember app screen 2" loading="lazy" />
+                <img id="project2-image3" src="assets/images/image3.png" alt="Origin & Ember app screen 3" loading="lazy" />
+                <img id="project2-image4" src="assets/images/image4.png" alt="Origin & Ember app screen 4" loading="lazy" />
+                <img id="project2-image5" src="assets/images/image5.png" alt="Origin & Ember app screen 5" loading="lazy" />
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 MUSEUM IOS-->
+          <article class="card">
+            <div class="thumb project4-thumb">
+              <img id="project4-image" src="assets/images/app2.png" alt="Museum project screenshot" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageGallery(['project4-image','project4-app1','project4-app3'])">
+            </div>
+            <div>
+              <h3>Met Museum App</h3>
+              <div class="meta">iOS App · Swift + UI/UX</div>
+              <p>Interactive dashboard for museum exhibits with real-time information, artist profiles, and event schedules.</p>
+              <div class="tags">
+                <span class="tag">Dashboard</span>
+                <span class="tag">Data Viz</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="#" onclick="openImageGallery(['project4-image','project4-app1','project4-app3']); return false;">Gallery</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/iOSApp4" target="_blank">GitHub Repo</a>
+              </div>
+              <div style="display: none;" aria-hidden="true">
+                <img id="project4-app1" src="assets/images/app1.png" alt="Met Museum App screen 1" loading="lazy" />
+                <img id="project4-app3" src="assets/images/app3.png" alt="Met Museum App screen 3" loading="lazy" />
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 12 - FutHub -->
+          <article class="card">
+            <div class="thumb">
+              <img id="futhub-main" src="assets/images/login.png" alt="FutHub app login screen" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageGallery(['futhub-main','futhub-ia','futhub-login','futhub-results'])" />
+            </div>
+            <div>
+              <h3>FutHub — Under Construction</h3>
+              <div class="meta">Full Stack App · JavaScript + API + Firebase</div>
+              <p>FutHub is currently under construction. A full stack football app with JavaScript, external API integrations, and Firebase database features.</p>
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">API</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Full Stack</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="#" onclick="openImageGallery(['futhub-main','futhub-ia','futhub-login','futhub-results']); return false;">Gallery</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/FutHub" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              </div>
+
+              <div style="display: none;" aria-hidden="true">
+                <img id="futhub-login" src="assets/images/FH1.png" alt="FutHub login screen" loading="lazy" />
+                <img id="futhub-ia" src="assets/images/IAFH.png" alt="FutHub AI feature screen" loading="lazy" />
+                <img id="futhub-results" src="assets/images/RESULTS.PNG" alt="FutHub results screen" loading="lazy" />
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8 - Colombia Web -->
+          <article class="card">
+            <div class="thumb">
+              <img id="colombia-web" src="assets/images/colombiaWeb.png" alt="Colombia Web Project - Cultural website" loading="lazy" class="zoomable-image" style="cursor: pointer;">
+            </div>
+            <div>
+              <h3>Colombia Web — Cultural Heritage</h3>
+              <div class="meta">Web Experience · HTML/CSS/JavaScript</div>
+              <p>Interactive website celebrating Colombian culture, traditions, and heritage. Features responsive design, cultural content, and immersive user experience.</p>
+              <div class="tags">
+                <span class="tag">Cultural</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">Interactive</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://jeanvq.github.io/html_assignment_2/index.html" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="btn ghost" href="https://github.com/jeanvq/html_assignment_2" target="_blank">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Featured - Hecho en Cali WORDPRESS-->
+          <article class="card">
+            <div class="thumb">
+              <img id="hecho-en-cali" src="assets/images/hechoencali.png" alt="Hecho en Cali WordPress project screenshot" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageModal('hecho-en-cali')" />
+            </div>
+            <div>
+              <h3>Hecho en Cali - WordPress Project</h3>
+              <div class="meta">Website · WordPress</div>
+              <p>A WordPress project focused on showcasing local identity and content with a clean, accessible, and responsive layout.</p>
+              <div class="tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">CMS</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://hechoencali7.wordpress.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 1 ADOBE XD PERSONAL SITE -->
+          <article class="card">
+            <div class="thumb">
+              <img id="adobexd-personal" src="assets/images/Adobe.png" alt="screenshot of AdobexD personal site" loading="lazy" class="zoomable-image" style="cursor: pointer;" onclick="openImageModal('adobexd-personal')" />
+            </div>
+            <div>
+              <h3>AdobexD — Personal Site</h3>
+              <div class="meta">Responsive landing · HTML/CSS/JS</div>
+              <p>A visual experience: warm typography, vibrant palette, and storytelling sections.</p>
+              <div class="tags">
+                <span class="tag">Responsive</span>
+                <span class="tag">A11y</span>
+                <span class="tag">SEO</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://xd.adobe.com/view/44902753-0a90-4204-b9c7-87a9151865b9-11c3/?fullscreen" target="_blank">Prototype</a>
+                <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 ADOBE XD MOBILE -->
+          <article class="card">
+            <div class="thumb">
+              <img src="assets/images/mobile.png" alt="Mobile app design screenshot" loading="lazy" class="zoomable-image" style="cursor: pointer;">
+            </div>
+            <div>
+              <h3>Mobile UI — App Design</h3>
+              <div class="meta">Mobile Design · Adobe XD</div>
+              <p>Modern mobile application interface with intuitive navigation, clean typography, and seamless user experience design.</p>
+              <div class="tags">
+                <span class="tag">Adobe XD</span>
+                <span class="tag">Mobile UI</span>
+              </div>
+              <div class="actions">
+                <a class="btn ghost" href="https://xd.adobe.com/view/81bf6fc7-d3eb-4ca2-9bc4-8397ef6795df-d4ec/screen/7ec52808-0588-4f3d-ac01-2bf7d4690a15?fullscreen&locale=en-US&mv=other&mv2=ahome&promoid=XKMMH7MW&xProduct=&xProductLocation=" target="_blank" rel="noopener noreferrer">Prototype</a>
+                <a class="btn ghost" href="https://github.com/jeanvq" target="_blank">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Jeancarlo Ricardo — Web Developer</div>
+  </footer>
+
+  <!-- Modal para mostrar imagen en tamaño completo -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <button class="modal-nav modal-prev" id="modalPrev">&lt;</button>
+        <img id="modalImage" src="" alt="">
+        <button class="modal-nav modal-next" id="modalNext">&gt;</button>
+      </div>
+      <div class="modal-counter" id="modalCounter"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // Simple modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const span = document.getElementsByClassName('close')[0];
+      const zoomImages = document.getElementsByClassName('zoomable-image');
+      
+      // Add click event to all zoomable images
+      for (let i = 0; i < zoomImages.length; i++) {
+        zoomImages[i].onclick = function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+          modalImg.alt = this.alt;
+        }
+      }
+      
+      // Close modal when clicking X
+      if (span) {
+        span.onclick = function() {
+          modal.style.display = 'none';
+        }
+      }
+      
+      // Close modal when clicking outside image
+      modal.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      }
+      
+      // Close modal with Escape key
+      document.onkeydown = function(event) {
+        if (event.key === 'Escape') {
+          modal.style.display = 'none';
+        }
+      }
+    });
+    
+    // Gallery variables
+    let currentGallery = [];
+    let currentImageIndex = 0;
+    
+    // Function to open modal from button click (single image)
+    function openImageModal(imageId) {
+      const targetImage = document.getElementById(imageId);
+      if (targetImage) {
+        currentGallery = [targetImage];
+        currentImageIndex = 0;
+        showModalImage();
+      }
+    }
+    
+    // Function to open modal with gallery (multiple images)
+    function openImageGallery(imageIds) {
+      const images = imageIds.map(id => document.getElementById(id)).filter(img => img);
+      if (images.length > 0) {
+        currentGallery = images;
+        currentImageIndex = 0;
+        showModalImage();
+      }
+    }
+    
+    // Function to show current image in modal
+    function showModalImage() {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const counter = document.getElementById('modalCounter');
+      const prevBtn = document.getElementById('modalPrev');
+      const nextBtn = document.getElementById('modalNext');
+      
+      if (currentGallery.length > 0) {
+        const currentImage = currentGallery[currentImageIndex];
+        modal.style.display = 'block';
+        modalImg.src = currentImage.src;
+        modalImg.alt = currentImage.alt;
+        
+        // Update counter
+        if (currentGallery.length > 1) {
+          counter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
+          counter.style.display = 'block';
+          prevBtn.style.display = 'block';
+          nextBtn.style.display = 'block';
+          
+          // Enable/disable navigation buttons
+          prevBtn.disabled = currentImageIndex === 0;
+          nextBtn.disabled = currentImageIndex === currentGallery.length - 1;
+        } else {
+          counter.style.display = 'none';
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+        }
+      }
+    }
+    
+    // Navigation functions
+    function nextImage() {
+      if (currentImageIndex < currentGallery.length - 1) {
+        currentImageIndex++;
+        showModalImage();
+      }
+    }
+    
+    function prevImage() {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        showModalImage();
+      }
+    }
+    
+    // Add navigation event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      const prevBtn = document.getElementById('modalPrev');
+      const nextBtn = document.getElementById('modalNext');
+      
+      if (prevBtn) prevBtn.onclick = prevImage;
+      if (nextBtn) nextBtn.onclick = nextImage;
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('imageModal');
+        if (modal.style.display === 'block') {
+          if (e.key === 'ArrowLeft') prevImage();
+          if (e.key === 'ArrowRight') nextImage();
+        }
+      });
+    });
+    
+    // Theme Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      
+      // Check for saved theme or default to dark
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      body.setAttribute('data-theme', savedTheme);
+      
+      // Toggle theme function
+      function toggleTheme() {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Analytics event (when you set up GA)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'theme_toggle', {
+            'theme': newTheme
+          });
+        }
+      }
+      
+      // Add click event listener
+      if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+      }
+      
+      // Analytics for contact interactions
+      document.querySelectorAll('.contact-card a, .social-link').forEach(link => {
+        link.addEventListener('click', function() {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_click', {
+              'contact_type': this.textContent.trim()
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
